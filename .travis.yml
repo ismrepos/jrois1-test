@@ -7,10 +7,11 @@ sudo: required
 cache: npm
 
 before_install:
+- "npm i -g npm@latest"
 - "cd Rois/test/"
 
 install:
-- "npm ci"
+- "npm install"
 
 before_script:
 - "date"
