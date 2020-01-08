@@ -9,6 +9,7 @@ before_install:
 - "cd Rois/test/"
 
 install:
+- "npm install -g npm"
 - "npm install"
 
 before_script:
