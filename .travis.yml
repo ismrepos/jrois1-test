@@ -4,6 +4,7 @@ addons:
   chrome: stable
 
 before_script:
+- "cd Rois/test/"
 - "npm install"
 
 script: "npm test"
