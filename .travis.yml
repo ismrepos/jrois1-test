@@ -2,13 +2,16 @@ os: linux
 language: node_js
 addons:
   chrome: stable
-  firefox: stable
+  firefox: "71.0"
 sudo: required
 
 before_install:
 - "cd Rois/test/"
 
-before_script:
+install:
 - "npm install"
+
+before_script:
+- "date"
 
 script: "npm test"
