@@ -2,9 +2,12 @@ os: linux
 language: node_js
 addons:
   chrome: stable
+sudo: required
+
+before_install:
+- "cd Rois/test/"
 
 before_script:
-- "cd Rois/test/"
 - "npm install"
 
 script: "npm test"
