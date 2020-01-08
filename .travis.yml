@@ -8,7 +8,7 @@ cache: npm
 
 before_install:
 - "npm i -g npm@latest"
-- "npm --version"
+- "npm -v"
 - "cd Rois/test/"
 
 install:
