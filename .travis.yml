@@ -8,13 +8,13 @@ cache: npm
 
 before_install:
 - "npm i npm@latest"
-- "npm -v"
+- "node_modules/npm -v"
 - "cd Rois/test/"
 
 install:
-- "npm install"
+- "node_modules/npm install"
 
 before_script:
 - "date"
 
-script: "npm test"
+script: "node_modules/npm test"
