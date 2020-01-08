@@ -2,6 +2,7 @@ os: linux
 language: node_js
 addons:
   chrome: stable
+  firefox: stable
 sudo: required
 
 before_install:
