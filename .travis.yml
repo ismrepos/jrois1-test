@@ -4,13 +4,13 @@ addons:
   chrome: stable
   firefox: "71.0"
 sudo: required
+cache: npm
 
 before_install:
 - "cd Rois/test/"
 
 install:
-- "npm install -g npm"
-- "npm install"
+- "npm ci"
 
 before_script:
 - "date"
