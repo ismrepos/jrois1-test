@@ -7,6 +7,9 @@ addons:
   firefox: "71.0"
 sudo: required
 cache: npm
+branches:
+  only:
+  - master
 
 before_install:
 - "npm i -g npm@latest"
@@ -19,4 +22,4 @@ install:
 before_script:
 - "date"
 
-script: "npm test"
+script: "./node_modules/.bin/wdio wdio.conf.js"
