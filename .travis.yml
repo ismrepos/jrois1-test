@@ -7,6 +7,9 @@ sudo: required
 cache: npm
 
 before_install:
+- "cd ~/.nvm"
+- "git pull origin master"
+- "source ~/.nvm/nvm.sh"
 - "npm i -g npm@latest"
 - "npm -v"
 - "cd Rois/test/"
