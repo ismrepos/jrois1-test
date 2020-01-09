@@ -1,5 +1,7 @@
 os: linux
 language: node_js
+node_js:
+- "10"
 addons:
   chrome: stable
   firefox: "71.0"
@@ -7,9 +9,6 @@ sudo: required
 cache: npm
 
 before_install:
-- "cd ~/.nvm"
-- "git pull origin master"
-- "source ~/.nvm/nvm.sh"
 - "npm i -g npm@latest"
 - "npm -v"
 - "cd Rois/test/"
