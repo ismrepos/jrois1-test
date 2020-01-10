@@ -15,7 +15,7 @@ before_install:
 #- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
 #  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - choco install jdk8
-- export PATH=$PATH:"/c/Program Files/Java/jdk1.8.0_191/bin"
+- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_231\bin"
 - java -version
 - cd Rois/test/
 
