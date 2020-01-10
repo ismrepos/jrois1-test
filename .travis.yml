@@ -23,7 +23,8 @@ install:
 - npm install
 before_script: 
 - export PATH=$PATH:".\node_modules\.bin"
-- selenium-standalone start
+- selenium-standalone start &
+- sleep 30
 script: "./node_modules/.bin/wdio wdio.conf.js"
 
 #before_deploy:
