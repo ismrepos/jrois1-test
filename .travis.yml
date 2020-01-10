@@ -25,7 +25,8 @@ before_script:
 - export PATH=$PATH:".\node_modules\.bin"
 - selenium-standalone start &
 - sleep 30
-script: "./node_modules/.bin/wdio wdio.conf.js"
+#script: "./node_modules/.bin/wdio wdio.conf.js"
+script: "wdio wdio.conf.js"
 
 #before_deploy:
 #- eval "$(ssh-agent -s)"
