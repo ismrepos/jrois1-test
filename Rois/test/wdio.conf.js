@@ -17,7 +17,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/**/*.js'
+        //'./specs/**/*.js'
+        './specs/nonuser/IndexController.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -51,7 +52,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 1,
         //
-        browserName: 'firefox',
+        browserName: 'internet explorer',
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -262,7 +263,7 @@ exports.config = {
     //}
     
     testAdmin: 'systemadmin',
-    testAdminPasswd: 'password1!',
+    testAdminPasswd: 'password',
     testUser: '',
     testUserPasswd: '',
 
