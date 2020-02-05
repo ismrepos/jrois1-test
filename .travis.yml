@@ -30,7 +30,7 @@ install:
 before_script:
 - selenium-standalone start &
 - sleep 30
-script: "wdio wdio_linux.conf.js"
+script: "./node_modules/.bin/wdio wdio_linux.conf.js"
 
 # Windows
 #before_script: 
