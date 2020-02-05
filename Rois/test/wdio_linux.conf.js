@@ -8,9 +8,6 @@ exports.config = {
     // on a remote machine).
     runner: 'local',
     //
-    // Override default path ('/wd/hub') for chromedriver service.
-    path: '/',
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -20,7 +17,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/*.js'
+        './specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,14 +49,19 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 3,
         //
         browserName: 'firefox',
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
-    }],
+    },
+    //{
+    //    maxInstances: 1,
+    //    browserName: 'chrome',
+    //}
+    ],
     //
     // ===================
     // Test Configurations
@@ -91,7 +93,8 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://localhost',
+    //baseUrl: 'http://localhost',
+    baseUrl: 'http://140.238.39.160',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -126,12 +129,20 @@ exports.config = {
     reporters: ['spec'],
  
     //
-    // Options to be passed to Mocha.
-    // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
+    // Options to be passed to Jasmine.
+    jasmineNodeOpts: {
+        //
+        // Jasmine default timeout
+        defaultTimeoutInterval: 60000,
+        //
+        // The Jasmine framework allows interception of each assertion in order to log the state of the application
+        // or website depending on the result. For example, it is pretty handy to take a screenshot every time
+        // an assertion fails.
+        expectationResultHandler: function(passed, assertion) {
+            // do something
+        }
     },
+    
     //
     // =====
     // Hooks
@@ -250,4 +261,37 @@ exports.config = {
     */
     //onReload: function(oldSessionId, newSessionId) {
     //}
+
+    portalKikanName: '琉球大学熱帯生物圏研究センター',
+    testAdmin: 'systemadmin',
+    testAdminPasswd: 'testpass',
+    testUser: 'Z0000004',
+    testUserPasswd: 'testpass',
+
+    contactUsAddress: 'knkuodor@acs.u-ryukyu.ac.jp',
+    contactSysAddress: 'tbrc@ura3.c.ism.ac.jp',
+
+    serviceName: 'TBRC-JROIS(Joint-Research On-line Integrated System)',
+    manualFilename:'JROIS_manual.pdf',
+    guideFilename:'guide2020.pdf',
+
+    moduleURL: '/u-ryukyu/TBRC',
+    //moduleURL: '/Rois/public/TBRC',
+    loginURL: '/login',
+    homeURL: '/home',
+    userInputURL: '/userinput',
+    userInfoURL: '/userinfo?pattern=1',
+    passwdChangeURL: '/password/change',
+    koboInputURL: '/register/offer',
+    koboJohoURL: '/info/confirm',
+    shinseiKensakuURL: '/application/search',
+    shinseiDownloadURL: '/application/download',
+    shinsaURL: '/register/audit',
+    shinsaIkkatsuURL: '/register/batch',
+    yosanURL: '/register/budget',
+    yosanIkkatsuURL: '/budgetall',
+    noticeURL: '/notification-search/input',
+    noticeTemplateURL: '/notice/template/search',
+    hyokaURL: '/evaluation',
+    hyokaIkkatsuURL: '/register/eva/collective',
 }

@@ -2,16 +2,14 @@ const assert = require('assert')
 
 describe.skip('ログイン画面', () => {
     browser.url(browser.config.moduleURL+browser.config.loginURL)
-    it('ポータル画面からログイン画面に遷移できること', () => {
-        
+    it('非ユーザーはログインできないこと', () => {
+        $('#username').setValue('notuser');
+        $('#password').setValue('password');
+        $('button=ログイン').click();
+        assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.loginURL)
     })
-    //'ログイン正常：ユーザーIDを利用'
-    //'ログイン正常：メールアドレスを利用'
-    //'ログイン失敗：必須未入力'
-    //'ログイン失敗：ユーザーID不正'
-    //'ログイン失敗：メールアドレス不正'
-    //'ログイン失敗：パスワード不正'
-    //'ログアウト前処理：セッション情報の確認'
-    //'ログアウト：ログイン画面に遷移すること'
-    //'ログアウト：セッション情報が破棄されること'
+    it('ログイン失敗のメッセージが表示されること', () => {
+        const alert = $(".alert-danger")
+        assert.strictEqual(alert.getText(), '入力したユーザー名またはパスワードが正しくありません。入力し直してください。')
+    })
 })
