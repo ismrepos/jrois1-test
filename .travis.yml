@@ -28,8 +28,8 @@ install:
 
 # Linux
 before_script:
-- selenium-standalone start &
-- sleep 30
+#- selenium-standalone start &
+#- sleep 30
 script: "wdio wdio_linux.conf.js"
 
 # Windows
