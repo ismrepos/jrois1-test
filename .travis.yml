@@ -27,7 +27,9 @@ install:
 - npm install
 
 # Linux
-before_script: skip
+before_script:
+- selenium-standalone start &
+- sleep 30
 script: "wdio wdio_linux.conf.js"
 
 # Windows
