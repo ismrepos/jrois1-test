@@ -1,14 +1,14 @@
-dist: xenial
-services:
-  - xvfb
 os: linux
 #os: windows
 language: node_js
 node_js:
 - '10'
+env:
+  global:
+    - MOZ_HEADLESS=1
 addons:
   chrome: stable
-  firefox: '71.0'
+  firefox: latest
   ssh_known_hosts: 140.238.39.160
 sudo: required
 cache: npm
@@ -33,9 +33,6 @@ install:
 before_script:
 - selenium-standalone start &
 - sleep 10
-- "export DISPLAY=:99.0"
-- "sh -e /etc/init.d/xvfb start"
-- sleep 3 
 script: "./node_modules/.bin/wdio wdio_linux.conf.js"
 
 # Windows
