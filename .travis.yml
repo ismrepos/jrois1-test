@@ -39,8 +39,7 @@ before_install:
 - sudo ufw allow in "Apache Full"
 - sudo mkdir /var/www/html/jrois
 - sudo ln -s Rois /var/www/html/jrois/Rois
-- sudo ls -la /var/www/html/jrois
-- sudo ls -la /var/www/html/jrois/Rois
+- sudo ls -la /var/www/html/jrois/Rois/module
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
 
@@ -61,10 +60,11 @@ install:
 - npm install
 
 # Linux
-before_script:
-- selenium-standalone start &
-- sleep 10
-script: "./node_modules/.bin/wdio wdio_linux.conf.js"
+#before_script:
+#- selenium-standalone start &
+#- sleep 10
+#script: "./node_modules/.bin/wdio wdio_linux.conf.js"
+script: skip
 
 # Windows
 #before_script: 
