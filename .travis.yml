@@ -30,7 +30,7 @@ before_install:
 ## Setup PHP.
 - php -v
 - sudo apt-get install -y libapache2-mod-php
-- sudo apt-get install -y php7.2-{mcrypt,cli,gd,curl,mysql,ldap,zip,common,xml,intl,mbstring,pgsql}
+- sudo apt-get install -y php-{mcrypt,cli,gd,curl,mysql,ldap,zip,common,xml,intl,mbstring,pgsql}
 - php -m
 
 ## Install and Setup Apache.
