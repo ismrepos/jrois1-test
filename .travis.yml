@@ -28,9 +28,9 @@ before_install:
 - sudo apt update -y
 
 ## Setup PHP.
-- sudo apt install -y php7.2 php7.2-mcrypt php7.2-cli php7.2-gd php7.2-curl php7.2-mysql php7.2-ldap php7.2-zip php7.2-fileinfo
-- sudo apt install -y php7.2-xml php7.2-intl php7.2-mbstring php7.2-pgsql php7.2-pdo_pgsql
 - php –v
+- sudo apt install -y php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+- sudo apt install -y php-xml php-intl php-mbstring php-pgsql php-pdo_pgsql
 
 ## Install and Setup Apache.
 - sudo apt install -y apache2
