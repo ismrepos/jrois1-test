@@ -1,9 +1,11 @@
 const assert = require('assert')
 
-describe.skip('研究者ホーム画面', () => {
+describe('研究者ホーム画面', () => {
 
     before(() => {
         browser.url(browser.config.moduleURL+browser.config.loginURL)
+        const lang = $(browser.config.xPathChangeLang)
+        if (lang.getText() == 'Japanese') { lang.click() }
         const userID = browser.config.testUser
         const userPassword = browser.config.testUserPasswd
         $('#username').setValue(userID);

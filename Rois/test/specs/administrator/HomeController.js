@@ -1,9 +1,11 @@
 const assert = require('assert')
 
-describe.skip('管理者ホーム画面', () => {
+describe('管理者ホーム画面', () => {
 
     before(() => {
         browser.url(browser.config.moduleURL+browser.config.loginURL)
+        const lang = $(browser.config.xPathChangeLang)
+        if (lang.getText() == 'Japanese') { lang.click() }
         const adminID = browser.config.testAdmin
         const adminPassword = browser.config.testAdminPasswd    
         $('#username').setValue(adminID);

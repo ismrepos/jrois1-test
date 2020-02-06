@@ -1,9 +1,16 @@
 const assert = require('assert')
 
-describe.skip('申請ポータル画面', () => {
+describe('申請ポータル画面', () => {
+
+    before(() => {
+        browser.url(browser.config.moduleURL)
+        const lang = $(browser.config.xPathChangeLang)
+        if (lang.getText() == 'Japanese') { lang.click() }
+    })
     beforeEach(() => {
         browser.url(browser.config.moduleURL)
     })
+
     it('画面のタイトルがTBRCで表示されること', () => {
         const title = browser.getTitle()
         assert.strictEqual(title, browser.config.serviceName)
