@@ -17,7 +17,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/**/*.js'
+        //'./specs/**/*.js'
+        './specs/**/LoginController.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -94,8 +95,8 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    //baseUrl: 'http://localhost',
-    baseUrl: 'http://140.238.39.160',
+    baseUrl: 'http://localhost',
+    //baseUrl: 'http://140.238.39.160',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -265,9 +266,9 @@ exports.config = {
 
     portalKikanName: '琉球大学熱帯生物圏研究センター',
     testAdmin: 'systemadmin',
-    testAdminPasswd: 'testpass',
-    testUser: 'Z0000004',
-    testUserPasswd: 'testpass',
+    testAdminPasswd: 'password1!',
+    testUser: 'Z0000001',
+    testUserPasswd: 'password1!',
 
     contactUsAddress: 'knkuodor@acs.u-ryukyu.ac.jp',
     contactSysAddress: 'tbrc@ura3.c.ism.ac.jp',
