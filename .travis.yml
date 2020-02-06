@@ -22,6 +22,7 @@ before_install:
 #- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
 #  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - cd Rois/test/
+- mysql -e 'CREATE DATABASE rois;'
 - mysql -utravis rois < ./utils/data/localhost_rois_init.sql
 - mysql -utravis rois -e 'SELECT count(*) FROM TDAT_RIYOSYA;'
 # Windows
