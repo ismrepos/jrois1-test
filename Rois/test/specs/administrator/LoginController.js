@@ -1,12 +1,12 @@
 const assert = require('assert')
 
 describe('ログイン画面', () => {
-    browser.url(browser.config.moduleURL+browser.config.loginURL)
 
     const adminID = browser.config.testAdmin
     const adminPassword = browser.config.testAdminPasswd
 
     before(() => {
+        browser.url(browser.config.moduleURL+browser.config.loginURL)
         const lang = $(browser.config.xPathChangeLang).getText()
         if (lang == 'Japanese') { lang.click() }
     })
