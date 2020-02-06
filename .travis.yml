@@ -20,20 +20,20 @@ branches:
 before_install:
 # Linux
 ## Env Setup.
-- sudo apt update -y
-- sudo apt install -y software-properties-common
+- sudo apt-get update -y
+- sudo apt-get install -y software-properties-common
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
 ##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - sudo add-apt-repository -y ppa:ondrej/php
-- sudo apt update -y
+- sudo apt-get update -y
 
 ## Setup PHP.
-- php –v
-- sudo apt install -y php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
-- sudo apt install -y php-xml php-intl php-mbstring php-pgsql php-pdo_pgsql
+- php -v
+- sudo apt-get install -y php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+- sudo apt-get install -y php-xml php-intl php-mbstring php-pgsql php-pdo_pgsql
 
 ## Install and Setup Apache.
-- sudo apt install -y apache2
+- sudo apt-get install -y apache2
 - cp ./Rois/test/utils/file/apache2.conf /etc/apache2/apache2.conf
 - sudo ufw allow in "Apache Full"
 - mkdir /var/www/html/jrois
