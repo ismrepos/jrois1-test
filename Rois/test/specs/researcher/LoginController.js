@@ -1,10 +1,15 @@
 const assert = require('assert')
 
-describe.skip('ログイン画面', () => {
+describe('ログイン画面', () => {
     browser.url(browser.config.moduleURL+browser.config.loginURL)
 
     const userID = browser.config.testUser
     const userPassword = browser.config.testUserPasswd
+
+    before(() => {
+        const lang = $(browser.config.xPathChangeLang).getText()
+        if (lang == 'Japanese') { lang.click() }
+    })
 
     it('研究者アカウントにログインできること', () => {
         $('#username').setValue(userID);

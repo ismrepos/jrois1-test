@@ -1,7 +1,13 @@
 const assert = require('assert')
 
-describe.skip('ログイン画面', () => {
+describe('ログイン画面', () => {
     browser.url(browser.config.moduleURL+browser.config.loginURL)
+
+    before(() => {
+        const lang = $(browser.config.xPathChangeLang).getText()
+        if (lang == 'Japanese') { lang.click() }
+    })
+
     it('非ユーザーはログインできないこと', () => {
         $('#username').setValue('notuser');
         $('#password').setValue('password');

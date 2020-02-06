@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-describe('研究者ホーム画面', () => {
+describe.skip('研究者ホーム画面', () => {
 
     before(() => {
         browser.url(browser.config.moduleURL+browser.config.loginURL)

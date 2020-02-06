@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-describe.skip('申請ポータル画面', () => {
+describe('申請ポータル画面', () => {
     beforeEach(() => {
         browser.url(browser.config.moduleURL)
     })

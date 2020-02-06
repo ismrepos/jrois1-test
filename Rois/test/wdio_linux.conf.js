@@ -275,6 +275,7 @@ exports.config = {
     serviceName: 'TBRC-JROIS(Joint-Research On-line Integrated System)',
     manualFilename:'JROIS_manual.pdf',
     guideFilename:'guide2020.pdf',
+    xPathChangeLang: '//body/header/nav/div[2]/div/ul[2]/li[2]/a',
 
     moduleURL: '/u-ryukyu/TBRC',
     //moduleURL: '/Rois/public/TBRC',
