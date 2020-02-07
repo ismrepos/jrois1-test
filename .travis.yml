@@ -38,7 +38,7 @@ before_install:
 - sudo cp ./Rois/test/utils/file/apache2.conf /etc/apache2/apache2.conf
 - sudo ufw allow in "Apache Full"
 - sudo mkdir /var/www/html/jrois
-- sudo ln -s /home/travis/Rois /var/www/html/jrois/Rois
+- sudo ln -s /home/travis/Rois/ /var/www/html/jrois/Rois
 - sudo ls -la /var/www/html/jrois/Rois/test
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
