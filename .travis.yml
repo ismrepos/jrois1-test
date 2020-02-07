@@ -39,7 +39,7 @@ before_install:
 - sudo ufw allow in "Apache Full"
 - sudo mkdir /var/www/html/jrois
 - sudo ln -s /home/travis/Rois /var/www/html/jrois/Rois
-- sudo ls -la /var/www/html/jrois/Rois/module
+- sudo ls -la /var/www/html/jrois/Rois/test
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
 
