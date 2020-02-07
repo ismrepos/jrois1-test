@@ -20,6 +20,7 @@ branches:
 before_install:
 # Linux
 ## Env Setup.
+- ROISHOME=/home/travis/build/ismrepos/jrois1-test/Rois/
 - sudo apt-get update -y
 - sudo apt-get install -y software-properties-common
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
@@ -35,17 +36,17 @@ before_install:
 
 ## Install and Setup Apache.
 - sudo apt-get install -y apache2
-- sudo cp /home/travis/build/ismrepos/jrois1-test/Rois/test/utils/file/apache2.conf /etc/apache2/apache2.conf
+- sudo cp /test/utils/file/apache2.conf /etc/apache2/apache2.conf
 - sudo ufw allow in "Apache Full"
 - sudo mkdir /var/www/html/jrois
-- sudo ln -s /home/travis/build/ismrepos/jrois1-test/Rois/ /var/www/html/jrois/Rois
+- sudo ln -s ＄{ROISHOME} /var/www/html/jrois/Rois
 - sudo ls -la /var/www/html/jrois/Rois/test
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
 
 ## Setup MySQL.
 - mysql -e 'CREATE DATABASE rois;'
-- mysql -utravis rois < /home/travis/build/ismrepos/jrois1-test/Rois/test/utils/data/localhost_rois_init.sql
+- mysql -utravis rois < ＄{ROISHOME}test/utils/data/localhost_rois_init.sql
 
 ## Setup WebDriverIO
 - cd Rois/test/
