@@ -20,7 +20,7 @@ branches:
 before_install:
 # Linux
 ## Env Setup.
-- export ROISHOME=/home/travis/build/ismrepos/jrois1-test/Rois/
+- export ROISHOME='/home/travis/build/ismrepos/jrois1-test/Rois/'
 - sudo apt-get update -y
 - sudo apt-get install -y software-properties-common
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
