@@ -41,7 +41,7 @@ before_install:
 - sudo mkdir /var/www/html/jrois
 - sudo ln -s ${ROISHOME}/ /var/www/html/jrois/Rois
 - sudo ls -la /var/www/html/jrois/Rois/test
-- find /etc/apache2/ | grep 'libphp7.so'
+- sudo find / | grep 'libphp7.so'
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
 
