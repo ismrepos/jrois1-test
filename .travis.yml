@@ -35,19 +35,17 @@ before_install:
 
 ## Install and Setup Apache.
 - sudo apt-get install -y apache2
-- sudo cp ./Rois/test/utils/file/apache2.conf /etc/apache2/apache2.conf
+- sudo cp /home/travis/build/ismrepos/jrois1-test/Rois/test/utils/file/apache2.conf /etc/apache2/apache2.conf
 - sudo ufw allow in "Apache Full"
 - sudo mkdir /var/www/html/jrois
-- ls -la
-- pwd
-- sudo ln -s /home/travis/Rois/ /var/www/html/jrois/Rois
-#- sudo ls -la /var/www/html/jrois/Rois/test
+- sudo ln -s /home/travis/build/ismrepos/jrois1-test/Rois/ /var/www/html/jrois/Rois
+- sudo ls -la /var/www/html/jrois/Rois/test
 - sudo systemctl restart apache2
 - sudo systemctl status apache2
 
 ## Setup MySQL.
 - mysql -e 'CREATE DATABASE rois;'
-- mysql -utravis rois < ./Rois/test/utils/data/localhost_rois_init.sql
+- mysql -utravis rois < /home/travis/build/ismrepos/jrois1-test/Rois/test/utils/data/localhost_rois_init.sql
 
 ## Setup WebDriverIO
 - cd Rois/test/
