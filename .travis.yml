@@ -1,7 +1,4 @@
-os: linux
-#os: windows
-services:
-  - mysql
+os: windows
 language: node_js
 node_js:
 - '10'
@@ -18,66 +15,24 @@ branches:
   only:
   - master
 before_install:
-# Linux
-## Env Setup.
-- export ROISHOME="/home/travis/build/ismrepos/jrois1-test/Rois"
-- sudo apt-get update -y
-- sudo apt-get install -y software-properties-common
-##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
-##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
-- sudo add-apt-repository -y ppa:ondrej/php
-- sudo apt-get update -y
-
-## Setup PHP.
-- php -v
-- sudo apt-get install -y php-{mcrypt,cli,gd,curl,mysql,ldap,zip,common,xml,intl,mbstring,pgsql}
-- php -m
-
-## Install and Setup Apache.
-- sudo apt-get install -y apache2
-- sudo apt-get install -y libapache2-mod-fastcgi
-- sudo cp ${ROISHOME}/test/utils/file/apache2.conf /etc/apache2/apache2.conf
-- sudo ufw allow in "Apache Full"
-- sudo cp ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf.default ~/.phpenv/versions/$(phpenv version-name)/etc/php-fpm.conf
-- sudo a2enmod rewrite actions fastcgi alias
-- echo "cgi.fix_pathinfo = 1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
-- sudo sed -i -e "s,www-data,travis,g" /etc/apache2/envvars
-- sudo chown -R travis:travis /var/lib/apache2/fastcgi
-- ~/.phpenv/versions/$(phpenv version-name)/sbin/php-fpm
-#- sudo cp -f build/travis-ci-apache /etc/apache2/sites-available/000-default.conf
-#- sudo sed -e "s?%TRAVIS_BUILD_DIR%?$(pwd)?g" --in-place /etc/apache2/sites-available/000-default.conf
-- sudo service apache2 restart
-- sudo service apache2 status
-
-## Setup MySQL.
-- mysql -e 'CREATE DATABASE rois;'
-- mysql -utravis rois < ${ROISHOME}/test/utils/data/localhost_rois_init.sql
-
-## Setup WebDriverIO
+# Windows
+- choco install jdk8
+- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_231\bin"
+- java -version
 - cd Rois/test/
 
-# Windows
-#- choco install jdk8
-#- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_231\bin"
-#- java -version
-#- cd Rois/test/
+##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
+##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 
 install:
 - npm install
 
-# Linux
-#before_script:
-#- selenium-standalone start &
-#- sleep 10
-#script: "./node_modules/.bin/wdio wdio_linux.conf.js"
-script: skip
-
 # Windows
-#before_script: 
-#- export PATH=$PATH:".\node_modules\.bin"
-#- selenium-standalone start &
-#- sleep 30
-#script: "./node_modules/.bin/wdio wdio_win.conf.js"
+before_script: 
+- export PATH=$PATH:".\node_modules\.bin"
+- selenium-standalone start &
+- sleep 10
+script: "wdio wdio_win.conf.js"
 
 #before_deploy:
 #- eval "$(ssh-agent -s)" 
