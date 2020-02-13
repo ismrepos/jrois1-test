@@ -18,7 +18,7 @@ before_install:
 # Windows
 - choco install jdk8
 - export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_231\bin"
-- java -version
+- java --version
 - cd Rois/test/
 
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
