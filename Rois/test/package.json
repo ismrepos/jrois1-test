@@ -21,7 +21,7 @@
     "@wdio/spec-reporter": "^5.16.5",
     "@wdio/sync": "^5.16.5",
     "chromedriver": "^78.0.1",
-    "geckodriver": "^1.19.1",
+    "geckodriver": "^0.23.0",
     "selenium-standalone": "^6.16.0",
     "wdio-chromedriver-service": "^5.0.2"
   },
