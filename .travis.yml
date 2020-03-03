@@ -18,8 +18,7 @@ env:
 addons:
   chrome: stable
   firefox: latest
-  internet_explorer: 11
-  ssh_known_hosts: $TESTHOST
+  #ssh_known_hosts: $TESTHOST
 sudo: required
 cache: npm
 branches:
@@ -30,6 +29,7 @@ before_install:
 - choco install jdk8
 - export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
 - java -version
+- choco install ie11
 - cd Rois/test/
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
 ##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
