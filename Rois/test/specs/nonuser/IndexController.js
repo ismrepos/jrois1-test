@@ -1,16 +1,14 @@
 const assert = require('assert')
+const tbrc = require('../../utils/TBRCCommons')
 
 describe('申請ポータル画面', () => {
-
     before(() => {
         browser.url(browser.config.moduleURL)
-        const lang = $(browser.config.xPathChangeLang)
-        if (lang.getText() == 'Japanese') { lang.click() }
+        tbrc.changeLang(browser)
     })
     beforeEach(() => {
         browser.url(browser.config.moduleURL)
     })
-
     it('画面のタイトルがTBRCで表示されること', () => {
         const title = browser.getTitle()
         assert.strictEqual(title, browser.config.serviceName)
@@ -23,7 +21,7 @@ describe('申請ポータル画面', () => {
     it('新規利用者情報登録画面に遷移できること', () => {
         const userinput_link = $('a=新規利用者情報登録')
         userinput_link.click()
-        assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.userinputURL+'?from=TBRC')
+        assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.userInputURL+'?from=TBRC')
     })
     it('問い合わせメールアドレスが正しく表示されていること', () => {
         const contuct_us = $('#contact_us').getText()

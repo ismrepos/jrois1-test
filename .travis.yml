@@ -5,10 +5,12 @@ node_js:
 env:
   global:
     - MOZ_HEADLESS=1
+  secure:
+    - "Mr43poiW1s8TCP5mxnQUqUncw5rLpOL+3gfgn6SDtq7EkE4QkiC/2PHagFmckGQ4S/r+avt2QC62LoV3rA0d2OuChJV4T49WDUtmy4gq3Je3+V8rfWnKAVNzb4yXnYd9rRDoZEsqKczqXNA1z3ymv6y/8OafSgstUTEjnYcHJS8WO9wEfGAjWNMnN2jc5czmkHcmb7xMNdscF+9WvGZkbMjPFk6KFjh5sNX5yXe3FHtiYpRXoS2zLOzxEPvzXTmpL11bwpTAtWghOE5lO+wBodrMXv5BXz6Fv/udZq9HsrCUdHZwnBC1d6gVbsTpqvSGI7Srq/RHr6XxQCcwxbrAOV0z/G695lzkOGTyo4sMuL7CQNcpcu2Iwi4VJzA/eg9tSypKFw2/7/XTYtnoV7IxFKMjzV15xQCEGr+IlQulLpfpqYMBEj5L7dagSkjqhJw4KrCot6vsVrqWlQ+DH2vPgeUYuwz0jayqYyylBWbjjHHbBWStMgARicx8HZ2mWDHjEErNZztrGQ99gGhkgyzu4sYfyiElWTyRZSKdlV4fErUsBHpocqq0edTthFuAxFbSjYkD+dMVCfX+EmdOwYXnLBpKIj8pP8NnQH9I8LBgH7ACNO8rYloEgCOzUSxacX25EGRrPcY5QKTNTCnF5daK+TQ28zMH3YRvg2OCM32hcp4="
 addons:
   chrome: stable
   firefox: latest
-  ssh_known_hosts: 140.238.39.160
+  ssh_known_hosts: $TESTHOST
 sudo: required
 cache: npm
 branches:

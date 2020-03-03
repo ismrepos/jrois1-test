@@ -1,11 +1,11 @@
 const assert = require('assert')
+const tbrc = require('../../utils/TBRCCommons')
 
 describe('ログイン画面', () => {
 
     before(() => {
         browser.url(browser.config.moduleURL+browser.config.loginURL)
-        const lang = $(browser.config.xPathChangeLang)
-        if (lang.getText() == 'Japanese') { lang.click() }
+        tbrc.changeLang(browser)
     })
 
     it('非ユーザーはログインできないこと', () => {

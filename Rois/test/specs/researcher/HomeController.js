@@ -1,16 +1,10 @@
 const assert = require('assert')
+const tbrc = require('../../utils/TBRCCommons')
 
 describe('研究者ホーム画面', () => {
 
     before(() => {
-        browser.url(browser.config.moduleURL+browser.config.loginURL)
-        const lang = $(browser.config.xPathChangeLang)
-        if (lang.getText() == 'Japanese') { lang.click() }
-        const userID = browser.config.testUser
-        const userPassword = browser.config.testUserPasswd
-        $('#username').setValue(userID);
-        $('#password').setValue(userPassword);
-        $('button=ログイン').click();
+        tbrc.loginResearcher(browser)
     })
 
     it('研究者向けメニュー項目が表示されること', () => {

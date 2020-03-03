@@ -1,16 +1,14 @@
 const assert = require('assert')
+const tbrc = require('../../utils/TBRCCommons')
 
 describe('管理者ホーム画面', () => {
 
     before(() => {
-        browser.url(browser.config.moduleURL+browser.config.loginURL)
-        const lang = $(browser.config.xPathChangeLang)
-        if (lang.getText() == 'Japanese') { lang.click() }
-        const adminID = browser.config.testAdmin
-        const adminPassword = browser.config.testAdminPasswd    
-        $('#username').setValue(adminID);
-        $('#password').setValue(adminPassword);
-        $('button=ログイン').click();
+        tbrc.loginAdmin(browser)
+    })
+
+    beforeEach(() => {
+        browser.url(browser.config.moduleURL+browser.config.homeURL)
     })
 
     it('管理者向けメニュー項目が表示されること', () => {
@@ -66,7 +64,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.userInfoURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
 
@@ -75,7 +75,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.passwdChangeURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('公募登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -83,7 +85,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.koboInputURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('公募情報確認画面に遷移後、ホーム画面に戻れること', () => {
@@ -91,7 +95,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.koboJohoURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('申請状況検索画面に遷移後、ホーム画面に戻れること', () => {
@@ -99,7 +105,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.shinseiKensakuURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('申請書ダウンロード画面に遷移後、ホーム画面に戻れること', () => {
@@ -107,7 +115,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.shinseiDownloadURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('審査結果登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -115,7 +125,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.shinsaURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('審査結果一括登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -123,7 +135,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.shinsaIkkatsuURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('予算配分額登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -131,15 +145,19 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.yosanURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
-    it.skip('予算配分額一括登録画面に遷移後、ホーム画面に戻れること', () => {
+    it('予算配分額一括登録画面に遷移後、ホーム画面に戻れること', () => {
         const target = $('a=予算配分額一括登録')
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.yosanIkkatsuURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('お知らせ検索登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -147,7 +165,9 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.noticeURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
     it('通知テンプレート検索登録画面に遷移後、ホーム画面に戻れること', () => {
@@ -155,10 +175,12 @@ describe('管理者ホーム画面', () => {
         target.scrollIntoView()
         target.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.noticeTemplateURL)
-        $('button=戻る').click()
+        const btnBack = $('button=戻る')
+        btnBack.scrollIntoView()
+        btnBack.click()
         assert.strictEqual(browser.getUrl(), browser.config.baseUrl+browser.config.moduleURL+browser.config.homeURL)
     })
-    it.skip('個人評価登録画面に遷移後、ホーム画面に戻れること', () => {
+    it('個人評価登録画面に遷移後、ホーム画面に戻れること', () => {
         const target = $('a=個人評価登録')
         target.scrollIntoView()
         target.click()
