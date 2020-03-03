@@ -261,10 +261,10 @@ exports.config = {
     //onReload: function(oldSessionId, newSessionId) {
     //}
     
-    testAdmin: 'systemadmin',
-    testAdminPasswd: 'password1!',
-    testUser: 'Z0000004',
-    testUserPasswd: 'password1!',
+    testAdmin: process.env.TESTADMIN,
+    testAdminPasswd: process.env.TESTADMIN_PASSWD,
+    testUser: process.env.TESTUSER,
+    testUserPasswd: process.env.TESTUSER_PASSWD,
 
     contactUsAddress: 'knkuodor@acs.u-ryukyu.ac.jp',
     contactSysAddress: 'tbrc@ura3.c.ism.ac.jp',
