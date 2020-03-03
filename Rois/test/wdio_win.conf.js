@@ -46,19 +46,27 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [
-    {
+    /*{
         maxInstances: 1,
         browserName: 'internet explorer',
-    },
-    /*{
+    },*/
+    {
         maxInstances: 1,
         //browserName: 'internet explorer',
         browserName: 'firefox',
         'moz:firefoxOptions': { args: ['-headless'] },
-    },*/
+    },
     /*{
         maxInstances: 1,
         browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: ['--headless', '--disable-gpu'],
+            prefs: {
+              'directory_upgrade': true,
+              'prompt_for_download': false,
+              'download.default_directory': downloadDir,
+            },
+        },
     },*/
     ],
     //
