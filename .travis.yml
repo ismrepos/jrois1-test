@@ -18,7 +18,7 @@ env:
 addons:
   chrome: stable
   firefox: latest
-  internetexplorer: 11
+  internet_explorer: 11
   ssh_known_hosts: $TESTHOST
 sudo: required
 cache: npm
@@ -28,7 +28,7 @@ branches:
 before_install:
 # Windows
 - choco install jdk8
-#- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
+- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
 - java -version
 - cd Rois/test/
 
