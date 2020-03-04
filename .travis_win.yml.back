@@ -2,34 +2,59 @@ os: windows
 language: node_js
 node_js:
 - '10'
+env:
+  global:
+    - MOZ_HEADLESS=1
+    # TESTHOST
+    - secure: "Mr43poiW1s8TCP5mxnQUqUncw5rLpOL+3gfgn6SDtq7EkE4QkiC/2PHagFmckGQ4S/r+avt2QC62LoV3rA0d2OuChJV4T49WDUtmy4gq3Je3+V8rfWnKAVNzb4yXnYd9rRDoZEsqKczqXNA1z3ymv6y/8OafSgstUTEjnYcHJS8WO9wEfGAjWNMnN2jc5czmkHcmb7xMNdscF+9WvGZkbMjPFk6KFjh5sNX5yXe3FHtiYpRXoS2zLOzxEPvzXTmpL11bwpTAtWghOE5lO+wBodrMXv5BXz6Fv/udZq9HsrCUdHZwnBC1d6gVbsTpqvSGI7Srq/RHr6XxQCcwxbrAOV0z/G695lzkOGTyo4sMuL7CQNcpcu2Iwi4VJzA/eg9tSypKFw2/7/XTYtnoV7IxFKMjzV15xQCEGr+IlQulLpfpqYMBEj5L7dagSkjqhJw4KrCot6vsVrqWlQ+DH2vPgeUYuwz0jayqYyylBWbjjHHbBWStMgARicx8HZ2mWDHjEErNZztrGQ99gGhkgyzu4sYfyiElWTyRZSKdlV4fErUsBHpocqq0edTthFuAxFbSjYkD+dMVCfX+EmdOwYXnLBpKIj8pP8NnQH9I8LBgH7ACNO8rYloEgCOzUSxacX25EGRrPcY5QKTNTCnF5daK+TQ28zMH3YRvg2OCM32hcp4="
+    # TESTADMIN
+    - secure: "i+zRrAZoqckwhjPNpApEa/os07QLid8DLw5ZjPHN4+8Dy267wDAmLswRNO3O86l6U1VtNnCzuRtSgGRvPMDX8pmm/9mTxRHOtmwzJJQIMhOqjSIqjfcDpSXyApIAYSga1jqncYwp3sh+ha0k+vgP9ysu2xY5s2PWBsES5CfH14+bT99C4d0V9Pfd2GC7QEBqCzQUjAtEQfeuX+Z5yR8VPwbHbPyZao+zbQfyII6pGXDbM6PgP8DbK3eizdb/TvuQdgvRxga8UjcwZsUNnyfYO5aB38949t0KD0DMl9RzEmybf9TOA8Y4JQ60/BhnDC5uJazBQW6qrL9A9hn6npZFIAaNbKO97P6YS5kJHff2z+OTe1Ze9imX1PcdAaFGON6bIj55wo0ySoq5gm46DBR/vn0lmu6+zXMng8W/GfSRZkUUr6wpkm+zD/DiCK5aigwB92tADqiIPLUdqSWYDMgDGVQ1y9N1KwnwL/CX+KhEfjAz4PvjKUQ/e4P9qLsH9+ID1zpcM3GX0YrIwUDSH+nPVgN3dSuNxI7Q2caN1AON/FagUlDGRT3tjrGy1F3PGgrvzmzEz/ckOPUCRwOWgdqpACsLafgevtdryMWtaJlmj+RvQ6xg9I5fF0w5p7nithIh3Fiz4Ie0q3weiJHNQhfeqy/Vj2WezwT+fZBPGZsmrIs="
+    # TESTADMIN_PASSWD
+    - secure: "FdkjuEAq6KOsnvGVFn8ZkkEsbwF46cfBBtNyElh7DHWd+AzC9DGX9Mh3oxeb9nnHDcOk246frcx0ismVaKU1oDtVlOALEjAxxL2eUMwWcacBSLNlpKmfifxq6ibWC1Yb06Pz75lsMQyyZcMvfJkTTccU3TK52uGiiAjMdD9Pn6LPf3mUuBmBkbhcZqpY1/u3E0WVpmeR1xWuaZY4CY9e7/EeWYhftukgaiiHGnUuumZfGAiM/mva51DNnTzKFffN0M/hQ9gdJeL128k/+AErYj/fJPdwbrD9WF9b+mVnuD4t3wt+LIZeLU7hNK6FVTtWKE99Obg2b+JUwYNo+AFjtrmPEdU+itdZR8JtIHg1P9/bz0pkv8twwxptf0eUa/7AyYPWNYCa9P/kM7OTBwdvPok9QEU5shypsVOxagWbc1NhxYmyZXjNp8Zb+07F6zA67Eu7oMQAaqnC+lLaX5w3rXnrmCFWw2ktxPWfEEvGjT8GCH7e2jWE/52dsdINl1LVBCap4Xhh0ItJaZA0x6FtHQWJ6uhuKh48XsAZ1D93nBZq9cokg61f3n/1t7RSlxMt67v4FjuDUKYGcOwlPa0yiAPgA7iMYR+jRWCfIoFnPLBbDVNfMuD9fviXObmEOjbqB4ObU9urr1V7nHBCa69zl6Cg3kppCOyJB57TXoPt+qo="
+    # TESTUSER
+    - secure: "M2fwt6PvUktUWSoPjtJ/8INe+RHrRVdKI1zjwGn0EtYOO9Q2dReh77VdH8Nkh1E1BCVcq40xw68fikDi+O2tdGKTq1lbn06GZvB8HUVD5JvBhEP196xzeYMth0f+en+Mpw8Gz7nFrS36VvzruH11RT/4hGD7nr9OstXp0ptnADcv1Qki/H3jrIJ5UJ+wy5vLRDqx/tnBzBBSIAAvO0QZL7fa1WqNESrDzKw7oSbOS5UZdUNwyAfqAYqoQp5mED0vQmb+sqve9fTVlk9Dt8cQkYt6Hkn4xiblPyuvoVGVx9b7W1Pe6f036UmRoWRu0nlvwrzKoAqJ5NWbSKInMc9bu0hKMHFsxboJAQAMbyLj428i5DqvmV8s3BkCMvrtcOGYeJiPr58MNlnkkSSir9xnoQtp0y1+nFwj8jN3hotZWre09Fxep0kol2flmeanmDLudqL1p0h+PcTInVmaxiQZtmAgtTe5HYeqgfMaxFsy4Puy+D+C46bRLxJQpJLVbvxsRfIEY7aBb761HaMOHpPeNOy01Qi/OyrWebZBVv8sO9b0b8kUVG8DstRI63MTyMgWv8+sGCaUiyHDtzjc56sCoBl29E3GMqUfqN8Y9sGZJvPdP000NG4/t/VvUPFDGx+vil58suIzGnmj5LJJAykzeGtmJzDZlrhwPPbRWoiCbxE="
+    # TESTUSER_PASSWD
+    - secure: "i79HQsaOXdywN049PiMVh0jDCk8fEL+823zd9f4u2rlwSZ+33HVqnj74xByrK7GfY9J7+lc9BdpQyCzVlFpzpu34rKoaZV1+5NjNSVWIMBhlIOxYzDv0xhullN4iG+R0Mz1+GVpY7saEtq9j7T6T9vaO31NSiSurH4FZbikctZRl0wx/9I29ByOyYTTOUkRG6pefSZe9NmAUhQn2s1UfLzd6PzHzX7KE7wc9fL1H/RqsoH1GqI2E6d8e9KE6lCVYn9jvmi3qGkZ1UK9us5VwgL0D8ovnSFn+PxEoARODx7j6zRkwyLSXg6f+OXDv3SLDQ9NVJ3eOktY4AhAjguABTgrZJt7iULpDn3idLpxyOre+aJvLlo6bwA6pPHh+IhI6pnJ9Nr5p39RXXGDYQAc/taf9OQg0Y1mfxjfxqUklJ/6sp2Prcgf5zngTtzVQoxyxvkriQ5YfH7talckr7Nv5RvEmddXOgRy6pDBwAslEJX/tCOTt+CcNYT9zw02i4uenPpLxAiPJ389jA/SJICuQcYaruXBcYWElhmFE+zwQa/cIfXhlo7HdRgPYlhUDL6ccsjAuKFBBS5TK2G8Gg7Z8N5RPv93twr5r4X4spWLVdHfFI/Z1aqt2vYQU2c5AssoVyr8Zp+bsH9YEn/Jy22JxsQWjYQy8mUEYRX1BFQ7f6oU="
 addons:
   chrome: stable
-  firefox: '71.0'
-  ssh_known_hosts: 140.238.39.160
+  #firefox: latest
+  #ssh_known_hosts: $TESTHOST
 sudo: required
 cache: npm
 branches:
   only:
   - master
 before_install:
-#- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
-#  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
+- powershell Get-WindowsFeature *gui*
+- powershell Install-WindowsFeature Server-Gui-Mgmt-Infra, Server-Gui-Shell
+# Windows
+#- wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
+#- sleep 30
+#- ./FirefoxSetup.exe -ms
+- choco upgrade chocolatey
 - choco install jdk8
-- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_231\bin"
+- export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
 - java -version
+- choco install ie11
+- choco install microsoft-edge
+#- choco install googlechrome
+#- choco install firefox
 - cd Rois/test/
+##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
+##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 
 install:
 - npm install
-before_script: 
+
+# Windows
+before_script:
 - export PATH=$PATH:".\node_modules\.bin"
 - selenium-standalone start &
-- sleep 30
-#script: "./node_modules/.bin/wdio wdio.conf.js"
-script: "wdio wdio.conf.js"
+- sleep 15
+script: "wdio wdio_win.conf.js"
 
 #before_deploy:
-#- eval "$(ssh-agent -s)"
+#- eval "$(ssh-agent -s)" 
 #- chmod 600 /tmp/deploy_rsa
 #- ssh-add /tmp/deploy_rsa
 
