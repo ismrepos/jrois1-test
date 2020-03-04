@@ -18,7 +18,7 @@ env:
 
 addons:
   browserstack:
-    username: bsuser63807
+    username: 'bsuser63807'
     access_key:
       secure: "ELeZvTaF9i8Pvrul5XR7MzcWnsvgNOtTy0gOLfTpBY87iWD2lqy/5bu255uem1VIJm2xhl6L9v5VggO9NNYhWpX4kib3fALIkTZZYNaFKEsEKM3CL+MzIW+qyBszQmIqznmu2lO73/bxIOmbL42ueIijIfxO/Ys5RIdxSWCCfm1f0UPN8JUXWwHlRojMXSwEC+bynI6M7npKMLr35OkbP8gsE32usBJNe3RcyAc+a+36LgsloZ0JR3OQ4YPHAmCddCwzvlCEtGkojqm+cHFvwmhEO19pSYFpSF09+/PDL00y5y8ZJpc7zxHAr8Om8s42YWCKtX5xXoQ450CJmatnRmQ+KsE/yrgkpbctALSMXi39LlPVyneLIHow5kCSNVGdZ8BIHyq2GnZCqcovD/M5qYgduwjiE+WFWyaSUdNO6GhEK8vBECuqmrQ2d5IZsaiVUFwpRnGB7HB5z/LT7TIt5P9NMOzza+UF2i6Vq0zcG/2jLGN8SHLXlLCrjz+r6JWovhtFqH3iJCebvWkY6WAFnOYGHuPZ5joc0SC2kC7LCbqhLOXtfU/+m5mo7Wt7g/U5JOsyHXmwgezASRHc+jVeMLTQdogvdl2pKBpSr5XvHEeK4xjDD3dpwOJGo+5I5t5mwes3OsjgOu+ut/Nd8/6LGzZrm/CDtNriGlgDkYL/ZXQ="
 
@@ -33,6 +33,8 @@ before_install:
 
 install:
 - npm install
+
+before_script: date
 
 script:　"./node_modules/.bin/wdio wdio_browserstack.conf.js"
 
