@@ -5,19 +5,14 @@ exports.config = {
     {
         os: 'Windows',
         os_version:'10',
-        browserName: 'Edge'
-    },
-    {
-        os: 'Windows',
-        os_version:'10',
         browserName: 'IE',
         browser_version: '11.0'
     },
     ],
 
     specs: [
-        //'./specs/**/*.js'
-        './specs/**/LoginController.js'
+        './specs/**/*.js'
+        //'./specs/**/LoginController.js'
     ],
 
     portalKikanName: '琉球大学熱帯生物圏研究センター',
@@ -35,7 +30,7 @@ exports.config = {
     guideFilename:'guide2020.pdf',
     xPathChangeLang: '//body/header/nav/div[2]/div/ul[2]/li[2]/a',
 
-    baseUrl: 'http://140.238.39.160',
+    baseUrl: 'http://'+process.env.TESTHOST,
     moduleURL: '/u-ryukyu/TBRC',
     loginURL: '/login',
     homeURL: '/home',
