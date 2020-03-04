@@ -39,4 +39,4 @@ install:
 before_script:
 - sleep 10
 
-script: "./node_modules/.bin/wdio wdio.conf.js"
+script: "./node_modules/.bin/wdio wdio_browserstack.conf.js"
