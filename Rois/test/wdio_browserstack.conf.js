@@ -1,10 +1,15 @@
 exports.config = {
     user: 'bsuser63807',
-    key: process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
+    key: 'VSR5Q12LBxx8qf5pz5bc',
     capabilities: [{
       browser: 'chrome',
       name: 'Bstack-[WebdriverIO] Sample Test'
     }],
+    
+    specs: [
+        //'./specs/**/*.js'
+        './specs/**/LoginController.js'
+    ],
 
     portalKikanName: '琉球大学熱帯生物圏研究センター',
 
@@ -21,6 +26,7 @@ exports.config = {
     guideFilename:'guide2020.pdf',
     xPathChangeLang: '//body/header/nav/div[2]/div/ul[2]/li[2]/a',
 
+    baseUrl: 'http://140.238.39.160',
     moduleURL: '/u-ryukyu/TBRC',
     loginURL: '/login',
     homeURL: '/home',
