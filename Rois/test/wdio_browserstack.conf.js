@@ -1,11 +1,20 @@
 exports.config = {
     user: 'bsuser63807',
     key: 'VSR5Q12LBxx8qf5pz5bc',
-    capabilities: [{
-      browser: 'chrome',
-      name: 'Bstack-[WebdriverIO] Sample Test'
-    }],
-    
+    capabilities: [
+    {
+        os: 'Windows',
+        os_version:'10',
+        browserName: 'Edge'
+    },
+    {
+        os: 'Windows',
+        os_version:'10',
+        browserName: 'IE',
+        browser_version: '11.0'
+    },
+    ],
+
     specs: [
         //'./specs/**/*.js'
         './specs/**/LoginController.js'
