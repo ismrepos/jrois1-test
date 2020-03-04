@@ -25,7 +25,7 @@ branches:
   only:
   - master
 before_install:
-- powershell Server-Gui-Mgmt-Infra,Server-Gui-Shell
+- powershell install-WindowsFeature Server-Gui-Mgmt-Infra,Server-Gui-Shell
 # Windows
 #- wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
 #- sleep 30
