@@ -27,12 +27,13 @@ branches:
 before_install:
 # Windows
 #- wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
-- choco upgrade chocolatey
+#- choco upgrade chocolatey
 - choco install jdk8
 - export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
 - java -version
 - choco install ie11
-- choco install googlechrome --version=79.0.3945.130
+- choco install microsoft-edge
+- choco install googlechrome
 - travis_wait 30 choco install firefox
 - cd Rois/test/
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
