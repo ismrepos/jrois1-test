@@ -27,7 +27,8 @@ branches:
 before_install:
 # Windows
 #- wget -O FirefoxSetup.exe "https://download.mozilla.org/?product=firefox-latest&os=win64&lang=en-US"
-#- cmd FirefoxSetup.exe -ms
+#- sleep 30
+#- ./FirefoxSetup.exe -ms
 - choco upgrade chocolatey
 - choco install jdk8
 - export PATH=$PATH:"C:\Program Files\Java\jdk1.8.0_211\bin"
@@ -36,7 +37,6 @@ before_install:
 - choco install microsoft-edge
 #- choco install googlechrome
 #- choco install firefox
-- choco install firefoxesr --version=68.4.1
 - cd Rois/test/
 ##- openssl aes-256-cbc -K $encrypted_d2018b1f08ea_key -iv $encrypted_d2018b1f08ea_iv
 ##  -in deploy_rsa.enc -out /tmp/deploy_rsa -d

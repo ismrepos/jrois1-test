@@ -52,10 +52,13 @@ exports.config = {
     },*/
     {
         maxInstances: 1,
-        //browserName: 'internet explorer',
+        browserName: 'edge',
+    },
+    /*{
+        maxInstances: 1,
         browserName: 'firefox',
         'moz:firefoxOptions': { args: ['-headless'] },
-    },
+    },*/
     /*{
         maxInstances: 1,
         browserName: 'chrome',
