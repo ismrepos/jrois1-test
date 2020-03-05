@@ -1,6 +1,9 @@
 exports.config = {
     user: 'bsuser63807',
     key: process.env.BROWSERSTACK_ACKEY,
+    commonCapabilities: [{
+        name: 'JROIS1 DEV TEST'
+    }],
     capabilities: [
     {
         os: 'Windows',
