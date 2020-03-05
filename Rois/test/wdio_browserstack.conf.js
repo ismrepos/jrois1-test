@@ -1,6 +1,6 @@
 exports.config = {
     user: 'bsuser63807',
-    key: 'VSR5Q12LBxx8qf5pz5bc',
+    key: process.env.BROWSERSTACK_ACKEY,
     capabilities: [
     {
         os: 'Windows',
